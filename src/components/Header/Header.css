@@ -1,0 +1,19 @@
+:local(.header) {
+  .layout {
+    background-color: grey;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  .title {
+    text-align: center;
+  
+    h1 {
+      font-size: 80px;
+    }
+    h3 {
+      font-size: 28px;
+    }
+
+  }
+}
