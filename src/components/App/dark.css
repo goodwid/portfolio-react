@@ -1,0 +1,10 @@
+@import "./App.css";
+
+:local(.app) {
+  * {
+    background-color: #333333;
+    color: white;
+  }
+  
+  
+}

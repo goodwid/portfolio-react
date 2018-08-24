@@ -12,7 +12,7 @@ export default class Projects extends Component {
     
     return (
       <div className={styles.projects}>
-	<p>I am Projects!</p>
+	      <p>I am Projects!</p>
       </div>
     );
   }

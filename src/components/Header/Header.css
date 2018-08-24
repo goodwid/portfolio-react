@@ -1,6 +1,6 @@
 :local(.header) {
   .layout {
-    background-color: grey;
+    /* background-color: grey; */
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;

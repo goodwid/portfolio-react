@@ -1,3 +1,15 @@
 :local(.main) {
 
+  $column: 14%;
+
+  .selector {
+    position: absolute;
+    width: $column;
+    height: 80vh;
+  }
+
+  .display {
+    position: absolute;
+    left: $column;
+  }
 }
