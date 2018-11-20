@@ -1,0 +1,44 @@
+
+
+$dark-bg-color: #333333;
+$dark-app-color: white;
+$dark-button-border-color: black;
+
+
+$light-bg-color: #d0d0d0;
+$light-app-color: black;
+$light-button-border-color: white;
+
+
+:local(.app) {
+  * {
+    
+    button {
+      border: 1px solid;
+      border-radius: 3px;
+    }
+  }
+
+}
+
+:local(.light) {
+  * {
+    background-color: $light-bg-color;
+    color: $light-app-color;
+
+    button {
+      border-color: $light-button-border-color;
+    }
+  }
+}
+
+:local(.dark) {
+  * {
+    background-color: $dark-bg-color;
+    color: $dark-app-color;
+
+    button {
+      border-color: $dark-button-border-color;
+    }
+  }
+}

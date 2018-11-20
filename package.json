@@ -15,6 +15,7 @@
   "keywords": [],
   "description": "",
   "dependencies": {
+    "postcss-simple-vars": "^5.0.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },

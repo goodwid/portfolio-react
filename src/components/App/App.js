@@ -1,41 +1,49 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Header from '../Header';
 import Main from '../Main';
 import Footer from '../Footer';
 import styles from './App.css';
-import light from './light.css';
-import dark from './dark.css';
+import { ProjectsContext } from '../../contexts/projects';
+import { getAll } from '../../services/api';
 
-export default class App extends Component {
+export default class App extends PureComponent {
   constructor() {
     super();
-    this.state = {
-      theme: light,
-      buttonText: 'light',
-      about: true
-    };
-    this.buttonHandler = this.buttonHandler.bind(this);
     this.aboutToggle = this.aboutToggle.bind(this);
+    this.buttonHandler = this.buttonHandler.bind(this);
+    this.state = {
+      theme: 'dark',
+      about: true,
+      data: []
+    };
   }
+
   aboutToggle() {
-    this.setState({about: !this.state.about});
+    const about = !this.state.about;
+    this.setState({ about });
   }
+  
   buttonHandler() {
-    const buttonText = this.state.buttonText === 'light' ? 'dark' : 'light';
-    const theme = this.state.theme === light ? dark : light;
-    this.setState({ theme, buttonText });
+    const theme = this.state.theme === 'light' ? 'dark' : 'light';
+    this.setState({ theme });
+  }
+
+  componentDidMount() {
+    getAll()
+      .then(data => this.setState({ data }));
   }
 
   render() {
-    const styles = this.state.theme;
-    const buttonText = this.state.buttonText;
-    return (
-      <main className={styles.app}> 
-        <Header toggle={this.aboutToggle}/>
-        <Main about={this.state.about}/>
-        <Footer buttonHandler={this.buttonHandler} buttonText={buttonText}/>
-      </main> 
+    const { theme, data, about }  = this.state;
 
+    return (
+      <main className={`${styles.app} ${styles[theme]}`} > 
+        <Header toggle={this.aboutToggle}/>
+        <ProjectsContext.Provider value={data}>
+          <Main about={about}/>
+        </ProjectsContext.Provider>
+        <Footer buttonHandler={this.buttonHandler} buttonText={`Select the ${theme === 'light' ? 'dark' : 'light'} theme`}/>
+      </main> 
     );
   }
 }

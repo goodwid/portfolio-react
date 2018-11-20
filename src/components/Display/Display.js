@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Display.css';
 import About from '../About';
-import Projects from '../Projects';
+import ProjectDetail from '../ProjectDetail';
 
 export default class Display extends Component {
   constructor(props) {
@@ -11,10 +11,11 @@ export default class Display extends Component {
   }
 
   render() {
+    const { project } = this.props;
     
     return (
       <div className={styles.display}>
-        { this.props.about ? <About /> : <Projects /> }
+        { this.props.about ? <About /> : <ProjectDetail project={project} /> }
 
       </div>
     );

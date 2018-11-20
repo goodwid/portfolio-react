@@ -15,7 +15,7 @@ export default class Header extends Component {
           <Picture />
           <div className="title" onClick={this.props.toggle}>
             <h1>David Goodwin</h1>
-            <h3>Software Developer</h3>
+            <h3>Full Stack Software Developer</h3>
           </div>
           <Links />
 

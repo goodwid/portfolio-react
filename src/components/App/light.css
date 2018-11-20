@@ -1,8 +1,0 @@
-@import "./App.css";
-
-:local(.app) {
-  * {
-    background-color: #eeeeee;
-    color: black;
-  }
-}
