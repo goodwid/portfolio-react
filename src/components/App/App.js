@@ -4,6 +4,7 @@ import Main from '../Main';
 import Footer from '../Footer';
 import styles from './App.css';
 import { ProjectsContext } from '../../contexts/projects';
+
 import { getAll } from '../../services/api';
 
 export default class App extends PureComponent {
@@ -11,16 +12,22 @@ export default class App extends PureComponent {
     super();
     this.aboutToggle = this.aboutToggle.bind(this);
     this.buttonHandler = this.buttonHandler.bind(this);
+    this.handleAboutState = this.handleAboutState.bind(this);
+
     this.state = {
       theme: 'dark',
-      about: true,
+      showAbout: false,
       data: []
     };
   }
 
   aboutToggle() {
-    const about = !this.state.about;
-    this.setState({ about });
+    const showAbout = !this.state.showAbout;
+    this.handleAboutState(showAbout);
+  }
+
+  handleAboutState(showAbout) {
+    this.setState({ showAbout });
   }
   
   buttonHandler() {
@@ -34,16 +41,16 @@ export default class App extends PureComponent {
   }
 
   render() {
-    const { theme, data, about }  = this.state;
+    const { theme, data, showAbout }  = this.state;
 
     return (
       <main className={`${styles.app} ${styles[theme]}`} > 
         <Header toggle={this.aboutToggle}/>
         <ProjectsContext.Provider value={data}>
-          <Main about={about}/>
+          <Main showAbout={showAbout} handleAboutState={this.handleAboutState}/>
         </ProjectsContext.Provider>
         <Footer buttonHandler={this.buttonHandler} buttonText={`Select the ${theme === 'light' ? 'dark' : 'light'} theme`}/>
-      </main> 
+      </main>
     );
   }
 }

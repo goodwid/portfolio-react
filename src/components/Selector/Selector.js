@@ -20,7 +20,7 @@ export default class Selector extends Component {
         <ul>
           <ProjectsContext.Consumer>
             { value => {
-              const results = value.map(el => (<div key={el._id} onClick={() => selector(el)}><Project p={el} /></div>))
+              const results = value.map(el => (<div key={el._id} onClick={() => selector(el)}><Project p={el} /></div>));
               return results;
             }}
           </ProjectsContext.Consumer>

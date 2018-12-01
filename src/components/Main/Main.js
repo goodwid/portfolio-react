@@ -13,11 +13,13 @@ export default class Main extends Component {
   }
 
   handleSelection(project) {
+    this.props.handleAboutState(false);
     this.setState({ project });
   }
 
   render() {
     const { project } = this.state;
+    const props = this.props;
     
     return (
       <div className={styles.main}>
@@ -25,7 +27,7 @@ export default class Main extends Component {
           <Selector handleSelection={this.handleSelection} />  
         </div>
         <div className='display'>
-          <Display about={this.props.about} project={project} />
+          <Display {...props} project={project} />
         </div>
       </div>
     );

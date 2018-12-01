@@ -6,8 +6,6 @@ import ProjectDetail from '../ProjectDetail';
 export default class Display extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
   }
 
   render() {
@@ -15,7 +13,7 @@ export default class Display extends Component {
     
     return (
       <div className={styles.display}>
-        { this.props.about ? <About /> : <ProjectDetail project={project} /> }
+        { this.props.showAbout ? <About /> : <ProjectDetail project={project} /> }
 
       </div>
     );
