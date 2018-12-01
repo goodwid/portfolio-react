@@ -1,5 +1,6 @@
 :local(.header) {
   .layout {
+    height: 20vh;
     /* background-color: grey; */
     display: flex;
     flex-flow: row nowrap;

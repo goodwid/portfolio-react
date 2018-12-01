@@ -24,9 +24,7 @@ export default class ProjectDetail extends Component {
         <Slideshow images={images} />
         <h4><a href={url}>Link to demo</a></h4>
         <h5><a href={repo}>View on github.</a></h5>
-        <p>
-          <ReactMarkdown source={description} astPlugins={[parseHtml]} />
-        </p>
+        <ReactMarkdown source={description} astPlugins={[parseHtml]} />
       </div>
     );
   }

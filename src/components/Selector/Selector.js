@@ -11,6 +11,7 @@ export default class Selector extends Component {
     };
   }
 
+  
 
   render() {
     const selector = this.props.handleSelection;
