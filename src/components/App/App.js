@@ -3,41 +3,35 @@ import Header from '../Header';
 import Main from '../Main';
 import Footer from '../Footer';
 import styles from './App.css';
-import { ProjectsContext } from '../../contexts/projects';
+import ProjectsContext from '../../contexts/projects';
 
 import { getAll } from '../../services/api';
 
 export default class App extends PureComponent {
-  constructor() {
-    super();
-    this.aboutToggle = this.aboutToggle.bind(this);
-    this.buttonHandler = this.buttonHandler.bind(this);
-    this.handleAboutState = this.handleAboutState.bind(this);
 
-    this.state = {
-      theme: 'dark',
-      showAbout: false,
-      data: []
-    };
-  }
+  state = {
+    theme: 'dark',
+    showAbout: false,
+    data: []
+  };
 
-  aboutToggle() {
+  aboutToggle = () => {
     const showAbout = !this.state.showAbout;
     this.handleAboutState(showAbout);
-  }
+  };
 
-  handleAboutState(showAbout) {
+  handleAboutState = (showAbout) => {
     this.setState({ showAbout });
-  }
+  };
   
-  buttonHandler() {
+  buttonHandler = () => {
     const theme = this.state.theme === 'light' ? 'dark' : 'light';
     this.setState({ theme });
-  }
+  };
 
-  componentDidMount() {
-    getAll()
-      .then(data => this.setState({ data }));
+  async componentDidMount() {
+    const data = await getAll();
+    this.setState({ data });
   }
 
   render() {

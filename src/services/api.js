@@ -1,7 +1,7 @@
 const API_URL = 'http://localhost:9000/api';
 
-export const getAll = () => {
-  return fetch(`${API_URL}/projects`)
+export const getAll = async() => {
+  return await fetch(`${API_URL}/projects`)
     .then(results => results.json());
 };
 

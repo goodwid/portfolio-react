@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import styles from './ProjectDetail.css';
 import ReactMarkdown from 'react-markdown';
 import htmlParser from 'react-markdown/plugins/html-parser';
@@ -8,11 +8,7 @@ const parseHtml = htmlParser({
   isValidNode: node => node.type !== 'script'
 });
 
-export default class ProjectDetail extends Component {
-  constructor(props) {
-    super(props);
-
-  }
+export default class ProjectDetail extends PureComponent {
 
   render() {
     const { project } = this.props;

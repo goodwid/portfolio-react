@@ -1,30 +1,42 @@
-import React, { Component } from 'react';
-import { ProjectsContext } from '../../contexts/projects';
+import React, { PureComponent } from 'react';
+import ProjectsContext from '../../contexts/projects';
 import Project from '../Project';
+import PropTypes from 'prop-types';
 
 import styles from './Selector.css';
 
-export default class Selector extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+export default class Selector extends PureComponent {
 
-  
+  state = {
+    selected: ''
+  };
+
+  static propTypes = {
+    handleSelection: PropTypes.function
+  };
+
+  static contextType = ProjectsContext;
+
+  handleClick = (project) => {
+    this.setState({ selected: project._id });
+    this.props.handleSelection(project);
+  };
 
   render() {
-    const selector = this.props.handleSelection;
-    
+    const { handleClick, context, state: { selected } } = this;
+
     return (
       <div className={styles.selector}>
         <ul>
-          <ProjectsContext.Consumer>
-            { value => {
-              const results = value.map(el => (<div key={el._id} onClick={() => selector(el)}><Project p={el} /></div>));
-              return results;
-            }}
-          </ProjectsContext.Consumer>
+          {context.map(el => {
+            return (
+              <div 
+                className={el._id === selected ? 'selected' : ''}
+                key={el._id} 
+                onClick={() => handleClick(el)}>
+                <Project project={el} />
+              </div>);
+          })}
         </ul>
       </div>
     );

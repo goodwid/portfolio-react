@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Picture from '../Picture';
 import Links from '../Links';
 import styles from './Header.css';
 
-export default class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
+export default class Header extends PureComponent {
 
   render() {
     return (

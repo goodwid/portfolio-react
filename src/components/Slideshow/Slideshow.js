@@ -1,12 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import styles from './Slideshow.css';
 
-export default class Slideshow extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+export default class Slideshow extends PureComponent {
 
   render() {
     

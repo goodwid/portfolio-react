@@ -4,9 +4,7 @@ import About from '../About';
 import ProjectDetail from '../ProjectDetail';
 
 export default class Display extends Component {
-  constructor(props) {
-    super(props);
-  }
+  
 
   render() {
     const { project } = this.props;

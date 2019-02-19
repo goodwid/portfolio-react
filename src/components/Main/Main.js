@@ -4,18 +4,15 @@ import Selector from '../Selector';
 import Display from '../Display';
 
 export default class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      project: {}
-    };
-    this.handleSelection = this.handleSelection.bind(this);
-  }
 
-  handleSelection(project) {
+  state = {
+    project: {}
+  };
+
+  handleSelection = (project) => {
     this.props.handleAboutState(false);
     this.setState({ project });
-  }
+  };
 
   render() {
     const { project } = this.state;

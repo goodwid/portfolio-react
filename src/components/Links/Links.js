@@ -1,12 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import styles from './Links.css';
 
-export default class Links extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+export default class Links extends PureComponent {
 
   render() {
     
