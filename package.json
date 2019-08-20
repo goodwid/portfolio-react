@@ -5,7 +5,7 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --hot --open --mode development",
+    "start": "webpack-dev-server --hot --mode development",
     "test": "echo \"Testing soon!\" && exit 0"
   },
   "author": "David Goodwin <goodwid@gmail.com>",
@@ -15,35 +15,45 @@
   "keywords": [],
   "description": "",
   "dependencies": {
-    "postcss-simple-vars": "^5.0.2",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2",
-    "react-markdown": "^4.0.6"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-markdown": "^4.1.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.4.7",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.6",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.19",
-    "css-loader": "^1.0.1",
-    "eslint": "^5.14.1",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.5.5",
+    "autoprefixer": "^9.6.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.2.1",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-react": "^7.12.4",
-    "file-loader": "^1.1.11",
+    "eslint-plugin-react": "^7.14.3",
+    "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
-    "precss": "^3.1.2",
+    "postcss-simple-vars": "^5.0.2",
+    "precss": "^4.0.0",
     "prop-types": "^15.7.2",
-    "style-loader": "^0.22.1",
-    "url-loader": "^1.1.2",
-    "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.1.14"
+    "style-loader": "^1.0.0",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/compilers/babel@7.0.1"
+    },
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
   }
 }

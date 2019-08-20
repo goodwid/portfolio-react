@@ -1,0 +1,21 @@
+:local(.links) {
+  margin-right: 20px;
+  ul {
+    list-style: none;
+    li {
+      width: 60px;
+      margin: 6px;
+      padding: 8px 15%;
+      border: 1px solid black;
+      border-radius: 3px;
+      height: 13px;
+      background-color: #666;
+      a {
+        /* width: 40px; */
+        color: white;
+        background-color: #666;
+        text-decoration: none;
+      }
+    }
+  }
+}

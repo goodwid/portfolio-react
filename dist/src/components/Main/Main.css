@@ -1,0 +1,22 @@
+:local(.main) {
+
+  $column: 15%;
+
+  .selector {
+    position: absolute;
+    top: 20vh;
+    bottom: 5vh;
+    width: $column;
+    /* height: 73%; */
+    overflow: hidden;
+  }
+
+  .display {
+    position: absolute;
+    left: $column;
+    top: 20vh;
+    bottom: 5vh;
+    
+    width: calc(100% - $column);
+  }
+}

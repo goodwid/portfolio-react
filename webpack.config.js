@@ -1,10 +1,10 @@
 /* eslint-env node */
 
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 
-const buildDir = 'docs';
-const path = `${__dirname}/${buildDir}`
+const buildDir = 'build';
+const path = `${__dirname}/${buildDir}`;
 
 module.exports = {
   entry: './src/index.js',
@@ -13,12 +13,14 @@ module.exports = {
     filename: 'bundle.[hash].js'
   },
   devServer: {
-    contentBase: `./${buildDir}`
+    contentBase: `./${buildDir}`,
+    stats: 'minimal',
+
   },
   devtool: 'inline-source-map',
   plugins: [
-    new CleanWebpackPlugin(`${path}/bundle.*.js`),
-    new HtmlPlugin({ template: './src/index.html'})
+    new CleanWebpackPlugin({path}),
+    new HtmlPlugin({ template: './src/index.html'  })
   ],
   module: {
     rules: [
@@ -35,13 +37,14 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
-            options: { sourceMap: true }
+
           },
           {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              importLoaders: 1
+              importLoaders: 1,
+              modules: 'global',
             }
           },
           {

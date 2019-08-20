@@ -12,7 +12,7 @@ export default class About extends Component {
     
     return (
       <div className={styles.about}>
-	      <p>I is a programmer.</p>
+        <p>Jack of all trades.  Master of one.</p>
       </div>
     );
   }

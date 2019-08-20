@@ -1,0 +1,16 @@
+:local(.selector) {
+  ul > div{
+    border-width: 2px 0px 2px 2px;
+    border-style: solid solid solid solid;
+    border-radius: 4px 0px 0px 4px;
+    -moz-border-radius: 4px 0px 0px 4px;
+    -webkit-border-radius: 4px 0px 0px 4px;
+  
+
+    
+    .selected {
+      border-color: yellow !important;
+    }
+  }
+
+}
